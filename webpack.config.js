@@ -3,10 +3,11 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const useAnalyzerPlugin = !!process.env.ANALYZE;
-const useESM = !!process.env.ESM;
+
+const entry = process.env.ENTRY_FILE;
 
 module.exports = {
-  entry: useESM ? "./src/index.mjs" : "./src/index.cjs",
+  entry: entry,
   mode: "development",
   target: "web",
   output: {

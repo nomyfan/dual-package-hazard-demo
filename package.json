@@ -1,10 +1,10 @@
 {
   "name": "dual-package-hazard-demo",
   "scripts": {
-    "build:cjs": "rimraf dist && webpack",
-    "build:esm": "rimraf dist && cross-env ESM=true webpack",
-    "analyze:cjs": "rimraf dist && cross-env ANALYZE=true webpack",
-    "analyze:esm": "rimraf dist && cross-env ANALYZE=true ESM=true webpack"
+    "analyze:cjs": "rimraf dist && cross-env ANALYZE=true ENTRY_FILE=./src/index.cjs webpack",
+    "analyze:cjs-fix": "rimraf dist && cross-env ANALYZE=true ENTRY_FILE=./src/index-fix.cjs webpack",
+    "analyze:esm": "rimraf dist && cross-env ANALYZE=true ENTRY_FILE=./src/index.mjs webpack",
+    "analyze:esm-fix": "rimraf dist && cross-env ANALYZE=true ENTRY_FILE=./src/index-fix.mjs webpack"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
